@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager - Organize Your Life</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <!-- Loading Spinner -->
+    <div id="loading" class="loading-spinner" style="display: none;">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1>📋 Task Manager</h1>
+            </div>
+            <div class="nav-menu">
+                <button id="logoutBtn" class="btn btn-secondary" style="display: none;">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container main-content">
+        <!-- Auth Section (Login/Register) -->
+        <div id="authSection">
+            <div class="auth-container">
+                <div class="auth-tabs">
+                    <button class="auth-tab active" data-tab="login">Login</button>
+                    <button class="auth-tab" data-tab="register">Register</button>
+                </div>
+
+                <!-- Login Form -->
+                <form id="loginForm" class="auth-form active">
+                    <h2>Welcome Back!</h2>
+                    <div class="form-group">
+                        <label for="loginEmail">Email</label>
+                        <input type="email" id="loginEmail" required placeholder="Enter your email">
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" required placeholder="Enter your password">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Login</button>
+                    <div id="loginError" class="error-message"></div>
+                </form>
+
+                <!-- Register Form -->
+                <form id="registerForm" class="auth-form">
+                    <h2>Create Account</h2>
+                    <div class="form-group">
+                        <label for="registerUsername">Username</label>
+                        <input type="text" id="registerUsername" required placeholder="Choose a username" minlength="3" maxlength="30">
+                        <small>3-30 characters</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerEmail">Email</label>
+                        <input type="email" id="registerEmail" required placeholder="Enter your email">
+                    </div>
+                    <div class="form-group">
+                        <label for="registerPassword">Password</label>
+                        <input type="password" id="registerPassword" required placeholder="Create a password" minlength="6">
+                        <small>At least 6 characters</small>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Register</button>
+                    <div id="registerError" class="error-message"></div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Dashboard Section -->
+        <div id="dashboardSection" style="display: none;">
+            <!-- User Info -->
+            <div class="user-info">
+                <h2>Welcome, <span id="userName"></span>!</h2>
+                <span class="user-role" id="userRole"></span>
+            </div>
+
+            <!-- Task Stats -->
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-number" id="totalTasks">0</div>
+                    <div class="stat-label">Total Tasks</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="completedTasks">0</div>
+                    <div class="stat-label">Completed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="pendingTasks">0</div>
+                    <div class="stat-label">Pending</div>
+                </div>
+            </div>
+
+            <!-- Task Controls -->
+            <div class="task-controls">
+                <button id="createTaskBtn" class="btn btn-primary">+ Create New Task</button>
+                <div class="filter-controls">
+                    <select id="filterStatus" class="filter-select">
+                        <option value="">All Status</option>
+                        <option value="false">Pending</option>
+                        <option value="true">Completed</option>
+                    </select>
+                    <select id="filterPriority" class="filter-select">
+                        <option value="">All Priorities</option>
+                        <option value="high">High</option>
+                        <option value="medium">Medium</option>
+                        <option value="low">Low</option>
+                    </select>
+                    <select id="sortTasks" class="filter-select">
+                        <option value="">Sort by Date</option>
+                        <option value="dueDate">Due Date</option>
+                        <option value="priority">Priority</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Tasks List -->
+            <div id="tasksList" class="tasks-container">
+                <p class="no-tasks">No tasks found. Create your first task!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create/Edit Task Modal -->
+    <div id="taskModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle">Create New Task</h2>
+            <form id="taskForm">
+                <input type="hidden" id="taskId">
+                <div class="form-group">
+                    <label for="taskTitle">Title *</label>
+                    <input type="text" id="taskTitle" required maxlength="100" placeholder="Task title">
+                </div>
+                <div class="form-group">
+                    <label for="taskDescription">Description</label>
+                    <textarea id="taskDescription" maxlength="500" rows="4" placeholder="Task description (optional)"></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="taskDueDate">Due Date *</label>
+                        <input type="date" id="taskDueDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="taskPriority">Priority</label>
+                        <select id="taskPriority">
+                            <option value="low">Low</option>
+                            <option value="medium" selected>Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary" id="cancelTaskBtn">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save Task</button>
+                </div>
+                <div id="taskFormError" class="error-message"></div>
+            </form>
+        </div>
+    </div>
+
+    <script src="/script.js"></script>
+</body>
+</html>
