@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #f8c8dc 0%, #f5c6d0 100%);
     min-height: 100vh;
     color: #333;
 }
@@ -34,7 +34,7 @@ body {
 
 .spinner {
     border: 5px solid #f3f3f3;
-    border-top: 5px solid #667eea;
+    border-top: 5px solid #f8c8dc;
     border-radius: 50%;
     width: 50px;
     height: 50px;
@@ -48,7 +48,7 @@ body {
 
 /* Navigation */
 .navbar {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 240, 245, 0.95);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     padding: 15px 0;
     position: sticky;
@@ -64,7 +64,7 @@ body {
 
 .nav-brand h1 {
     font-size: 24px;
-    color: #667eea;
+    color: #d87093;
     font-weight: 700;
 }
 
@@ -78,7 +78,7 @@ body {
 .auth-container {
     max-width: 450px;
     margin: 50px auto;
-    background: white;
+    background: #fff5f7;
     border-radius: 15px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
     overflow: hidden;
@@ -86,7 +86,7 @@ body {
 
 .auth-tabs {
     display: flex;
-    background: #f8f9fa;
+    background: #ffeef2;
 }
 
 .auth-tab {
@@ -102,9 +102,9 @@ body {
 }
 
 .auth-tab.active {
-    background: white;
-    color: #667eea;
-    border-bottom: 3px solid #667eea;
+    background: #fff5f7;
+    color: #d87093;
+    border-bottom: 3px solid #d87093;
 }
 
 .auth-form {
@@ -140,7 +140,7 @@ body {
 .form-group select {
     width: 100%;
     padding: 12px 15px;
-    border: 2px solid #e0e0e0;
+    border: 2px solid #f0d8e0;
     border-radius: 8px;
     font-size: 15px;
     transition: all 0.3s;
@@ -152,8 +152,8 @@ body {
 .form-group textarea:focus,
 .form-group select:focus {
     outline: none;
-    border-color: #667eea;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    border-color: #d87093;
+    box-shadow: 0 0 0 3px rgba(216, 112, 147, 0.1);
 }
 
 .form-group small {
@@ -169,7 +169,7 @@ body {
     gap: 15px;
 }
 
-/* Buttons */
+/* Buttons - Изменены на постельно-розовый */
 .btn {
     padding: 12px 24px;
     border: none;
@@ -183,40 +183,40 @@ body {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #f8c8dc 0%, #d87093 100%);
     color: white;
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 5px 15px rgba(216, 112, 147, 0.4);
 }
 
 .btn-secondary {
-    background: #6c757d;
+    background: #e8b4c2;
     color: white;
 }
 
 .btn-secondary:hover {
-    background: #5a6268;
+    background: #d8a4b2;
 }
 
 .btn-danger {
-    background: #dc3545;
+    background: #e75480;
     color: white;
 }
 
 .btn-danger:hover {
-    background: #c82333;
+    background: #d64570;
 }
 
 .btn-success {
-    background: #28a745;
+    background: #f4afc3;
     color: white;
 }
 
 .btn-success:hover {
-    background: #218838;
+    background: #e49fb3;
 }
 
 .btn-block {
@@ -231,11 +231,11 @@ body {
 
 /* Error Messages */
 .error-message {
-    color: #dc3545;
+    color: #e75480;
     font-size: 14px;
     margin-top: 10px;
     padding: 10px;
-    background: #f8d7da;
+    background: #ffe6ee;
     border-radius: 5px;
     display: none;
 }
@@ -246,7 +246,7 @@ body {
 
 /* Dashboard */
 .user-info {
-    background: white;
+    background: #fff5f7;
     padding: 25px;
     border-radius: 15px;
     margin-bottom: 30px;
@@ -262,7 +262,7 @@ body {
 }
 
 .user-role {
-    background: #667eea;
+    background: linear-gradient(135deg, #f8c8dc 0%, #d87093 100%);
     color: white;
     padding: 8px 16px;
     border-radius: 20px;
@@ -280,7 +280,7 @@ body {
 }
 
 .stat-card {
-    background: white;
+    background: #fff5f7;
     padding: 25px;
     border-radius: 15px;
     text-align: center;
@@ -295,7 +295,7 @@ body {
 .stat-number {
     font-size: 42px;
     font-weight: 700;
-    color: #667eea;
+    color: #d87093;
     margin-bottom: 10px;
 }
 
@@ -307,7 +307,7 @@ body {
 
 /* Task Controls */
 .task-controls {
-    background: white;
+    background: #fff5f7;
     padding: 20px;
     border-radius: 15px;
     margin-bottom: 30px;
@@ -327,7 +327,7 @@ body {
 
 .filter-select {
     padding: 10px 15px;
-    border: 2px solid #e0e0e0;
+    border: 2px solid #f0d8e0;
     border-radius: 8px;
     font-size: 14px;
     background: white;
@@ -337,7 +337,7 @@ body {
 
 /* Tasks Container */
 .tasks-container {
-    background: white;
+    background: #fff5f7;
     padding: 25px;
     border-radius: 15px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
@@ -352,8 +352,8 @@ body {
 
 /* Task Card */
 .task-card {
-    background: #f8f9fa;
-    border-left: 5px solid #667eea;
+    background: #ffeef2;
+    border-left: 5px solid #d87093;
     padding: 20px;
     margin-bottom: 15px;
     border-radius: 10px;
@@ -367,19 +367,19 @@ body {
 
 .task-card.completed {
     opacity: 0.7;
-    border-left-color: #28a745;
+    border-left-color: #f4afc3;
 }
 
 .task-card.priority-high {
-    border-left-color: #dc3545;
+    border-left-color: #e75480;
 }
 
 .task-card.priority-medium {
-    border-left-color: #ffc107;
+    border-left-color: #f8c8dc;
 }
 
 .task-card.priority-low {
-    border-left-color: #17a2b8;
+    border-left-color: #e8b4c2;
 }
 
 .task-header {
@@ -419,34 +419,34 @@ body {
 }
 
 .task-badge.priority {
-    background: #667eea;
+    background: #d87093;
     color: white;
 }
 
 .task-badge.priority-high {
-    background: #dc3545;
+    background: #e75480;
 }
 
 .task-badge.priority-medium {
-    background: #ffc107;
+    background: #f8c8dc;
     color: #333;
 }
 
 .task-badge.priority-low {
-    background: #17a2b8;
+    background: #e8b4c2;
 }
 
 .task-badge.status {
-    background: #28a745;
+    background: #f4afc3;
     color: white;
 }
 
 .task-badge.status-pending {
-    background: #6c757d;
+    background: #e8b4c2;
 }
 
 .task-badge.due-date {
-    background: #e9ecef;
+    background: #ffeef2;
     color: #333;
 }
 
@@ -482,7 +482,7 @@ body {
 }
 
 .modal-content {
-    background-color: white;
+    background-color: #fff5f7;
     margin: 20px;
     padding: 30px;
     border-radius: 15px;
@@ -597,7 +597,7 @@ body {
     }
 
     .btn-primary {
-        background: #0000ff;
+        background: #ff69b4;
         border: 2px solid #000;
     }
 }
