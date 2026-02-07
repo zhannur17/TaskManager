@@ -96,28 +96,34 @@ Deployed Project URL:
 This screenshot demonstrates the user registration functionality, where a new user creates an account by providing required credentials.
 
 
-
-### User Login
-![Login](screenshots/Снимок экрана 2026-02-07 203020.png)
-
-This screenshot shows the login process, where the user authenticates and receives a JWT for accessing protected endpoints.
-
-
-
-### Create Task
-![Create Task](screenshots/Снимок экрана 2026-02-07 202955.png)
-
-This screenshot demonstrates how an authenticated user creates a new task in the system.
-
----
+## Screenshots and Feature Description
 
 ### Task List
 ![Task List](screenshots/Снимок экрана 2026-02-07 202941.png)
 
-
-This screenshot displays the list of tasks associated with the logged-in user.
+This screenshot shows the list of tasks belonging to the logged-in user.
 
 ---
+
+### Create Task
+![Create Task](screenshots/Снимок экрана 2026-02-07 202955.png)
+
+This screenshot demonstrates how an authenticated user creates a new task.
+
+---
+
+### Login
+![Login](screenshots/Снимок экрана 2026-02-07 203020.png)
+
+This screenshot shows the user login process and successful authentication.
+
+---
+
+### Register
+![Register](screenshots/Снимок экрана 2026-02-07 203039.png)
+
+This screenshot demonstrates the user registration functionality.
+
 
 ## Final Notes
 This project was developed as a final exam project and demonstrates RESTful API design, authentication, authorization, database integration, and deployment.
