@@ -1,3 +1,4 @@
+//Symbat
 const mongoose = require('mongoose');
 
 const taskSchema = new mongoose.Schema(
@@ -37,7 +38,6 @@ const taskSchema = new mongoose.Schema(
   }
 );
 
-// Index for faster queries
 taskSchema.index({ user: 1, status: 1 });
 taskSchema.index({ dueDate: 1 });
 
