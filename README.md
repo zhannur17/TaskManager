@@ -91,28 +91,29 @@ Deployed Project URL:
 ## Screenshots and Feature Description
 
 ### User Registration
-![User Registration](screenshots/Снимок экрана 2026-02-07 202955.png)
+![Register](screenshots/Снимок экрана 2026-02-07 203039.png)
 
 This screenshot demonstrates the user registration functionality, where a new user creates an account by providing required credentials.
 
 
 
 ### User Login
-![User Login](screenshots/login.png)
+![Login](screenshots/Снимок экрана 2026-02-07 203020.png)
 
 This screenshot shows the login process, where the user authenticates and receives a JWT for accessing protected endpoints.
 
 
 
 ### Create Task
-![Create Task](screenshots/create-task.png)
+![Create Task](screenshots/Снимок экрана 2026-02-07 202955.png)
 
 This screenshot demonstrates how an authenticated user creates a new task in the system.
 
 ---
 
 ### Task List
-![Task List](screenshots/task-list.png)
+![Task List](screenshots/Снимок экрана 2026-02-07 202941.png)
+
 
 This screenshot displays the list of tasks associated with the logged-in user.
 
