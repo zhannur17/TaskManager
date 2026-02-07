@@ -1,9 +1,8 @@
+//Symbat
+
 const Task = require('../models/task');
 const { sendTaskReminderEmail } = require('../config/email');
 
-// @desc    Create a new task
-// @route   POST /api/tasks
-// @access  Private
 const createTask = async (req, res, next) => {
   try {
     const { title, description, dueDate, priority } = req.body;
@@ -26,14 +25,10 @@ const createTask = async (req, res, next) => {
   }
 };
 
-// @desc    Get all tasks for logged-in user
-// @route   GET /api/tasks
-// @access  Private
 const getTasks = async (req, res, next) => {
   try {
     const { status, priority, sort } = req.query;
 
-    // Build query
     const query = { user: req.user._id };
 
     if (status !== undefined) {
@@ -44,7 +39,6 @@ const getTasks = async (req, res, next) => {
       query.priority = priority;
     }
 
-    // Build sort
     let sortOption = { createdAt: -1 }; // Default: newest first
 
     if (sort === 'dueDate') {
@@ -65,9 +59,6 @@ const getTasks = async (req, res, next) => {
   }
 };
 
-// @desc    Get a single task by ID
-// @route   GET /api/tasks/:id
-// @access  Private
 const getTaskById = async (req, res, next) => {
   try {
     const task = await Task.findById(req.params.id);
@@ -79,7 +70,6 @@ const getTaskById = async (req, res, next) => {
       });
     }
 
-    // Make sure user owns the task
     if (task.user.toString() !== req.user._id.toString()) {
       return res.status(403).json({
         success: false,
@@ -95,10 +85,6 @@ const getTaskById = async (req, res, next) => {
     next(error);
   }
 };
-
-// @desc    Update a task
-// @route   PUT /api/tasks/:id
-// @access  Private
 const updateTask = async (req, res, next) => {
   try {
     let task = await Task.findById(req.params.id);
@@ -110,7 +96,6 @@ const updateTask = async (req, res, next) => {
       });
     }
 
-    // Make sure user owns the task
     if (task.user.toString() !== req.user._id.toString()) {
       return res.status(403).json({
         success: false,
@@ -118,7 +103,6 @@ const updateTask = async (req, res, next) => {
       });
     }
 
-    // Update task
     const { title, description, status, dueDate, priority } = req.body;
 
     if (title !== undefined) task.title = title;
@@ -139,9 +123,6 @@ const updateTask = async (req, res, next) => {
   }
 };
 
-// @desc    Delete a task
-// @route   DELETE /api/tasks/:id
-// @access  Private
 const deleteTask = async (req, res, next) => {
   try {
     const task = await Task.findById(req.params.id);
@@ -152,8 +133,6 @@ const deleteTask = async (req, res, next) => {
         message: 'Task not found',
       });
     }
-
-    // Make sure user owns the task or is admin
     if (
       task.user.toString() !== req.user._id.toString() &&
       req.user.role !== 'admin'
@@ -175,9 +154,6 @@ const deleteTask = async (req, res, next) => {
   }
 };
 
-// @desc    Get all tasks (Admin only)
-// @route   GET /api/tasks/admin/all
-// @access  Private/Admin
 const getAllTasks = async (req, res, next) => {
   try {
     const tasks = await Task.find({}).populate('user', 'username email');
@@ -191,10 +167,6 @@ const getAllTasks = async (req, res, next) => {
     next(error);
   }
 };
-
-// @desc    Send task reminder email
-// @route   POST /api/tasks/:id/remind
-// @access  Private
 const sendReminder = async (req, res, next) => {
   try {
     const task = await Task.findById(req.params.id).populate('user');
@@ -206,7 +178,6 @@ const sendReminder = async (req, res, next) => {
       });
     }
 
-    // Make sure user owns the task
     if (task.user._id.toString() !== req.user._id.toString()) {
       return res.status(403).json({
         success: false,
@@ -214,7 +185,6 @@ const sendReminder = async (req, res, next) => {
       });
     }
 
-    // Send reminder email
     await sendTaskReminderEmail(task.user.email, task.title, task.dueDate);
 
     res.status(200).json({
