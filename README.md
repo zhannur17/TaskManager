@@ -99,28 +99,28 @@ This screenshot demonstrates the user registration functionality, where a new us
 ## Screenshots and Feature Description
 
 ### Task List
-![Task List](screenshots/Снимок экрана 2026-02-07 202941.png)
+![Task List](screenshots/task-list.png)
 
 This screenshot shows the list of tasks belonging to the logged-in user.
 
 ---
 
 ### Create Task
-![Create Task](screenshots/Снимок экрана 2026-02-07 202955.png)
+![Create Task](screenshots/create-task.png)
 
 This screenshot demonstrates how an authenticated user creates a new task.
 
 ---
 
 ### Login
-![Login](screenshots/Снимок экрана 2026-02-07 203020.png)
+![Login](screenshots/login.png)
 
 This screenshot shows the user login process and successful authentication.
 
 ---
 
 ### Register
-![Register](screenshots/Снимок экрана 2026-02-07 203039.png)
+![Register](screenshots/register.png)
 
 This screenshot demonstrates the user registration functionality.
 
