@@ -88,12 +88,6 @@ Deployed Project URL:
 
 
 
-## Screenshots and Feature Description
-
-### User Registration
-![Register](screenshots/Снимок экрана 2026-02-07 203039.png)
-
-This screenshot demonstrates the user registration functionality, where a new user creates an account by providing required credentials.
 
 
 ## Screenshots and Feature Description
