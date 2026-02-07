@@ -1,3 +1,4 @@
+//Symbat
 const express = require('express');
 const {
   createTask,
@@ -14,10 +15,8 @@ const { validate } = require('../middleware/validation');
 
 const router = express.Router();
 
-// Admin only routes
 router.get('/admin/all', protect, authorize('admin'), getAllTasks);
 
-// Protected routes (require authentication)
 router.post('/', protect, validate('taskCreate'), createTask);
 router.get('/', protect, getTasks);
 router.get('/:id', protect, getTaskById);
