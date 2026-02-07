@@ -1,4 +1,4 @@
-# TaskManager — Final Project
+# TaskManager - Final Project
 
 ## Project Overview
 TaskManager is a full-stack web application developed as a final project.
@@ -84,7 +84,9 @@ The project is deployed using Render.
 Environment variables are securely stored using Render environment settings.
 
 Deployed Project URL:
-https://taskmanager-wolm.onrender.com
+[https://taskmanager-wolm.onrender.com](https://taskmanager-wolm.onrender.com)
+
+
 
 ## Screenshots and Feature Description
 
@@ -93,14 +95,14 @@ https://taskmanager-wolm.onrender.com
 
 This screenshot demonstrates the user registration functionality, where a new user creates an account by providing required credentials.
 
----
+
 
 ### User Login
 ![User Login](screenshots/login.png)
 
 This screenshot shows the login process, where the user authenticates and receives a JWT for accessing protected endpoints.
 
----
+
 
 ### Create Task
 ![Create Task](screenshots/create-task.png)
