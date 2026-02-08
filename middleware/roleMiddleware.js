@@ -1,4 +1,4 @@
-// Middleware to check if user has specific role(s)
+
 const authorize = (...roles) => {
   return (req, res, next) => {
     if (!req.user) {
