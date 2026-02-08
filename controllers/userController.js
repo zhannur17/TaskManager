@@ -1,8 +1,6 @@
 const User = require('../models/user');
 
-// @desc    Get user profile
-// @route   GET /api/users/profile
-// @access  Private
+
 const getUserProfile = async (req, res, next) => {
   try {
     const user = await User.findById(req.user._id);
