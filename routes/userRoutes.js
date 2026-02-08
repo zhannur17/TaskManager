@@ -15,7 +15,7 @@ const router = express.Router();
 router.get('/profile', protect, getUserProfile);
 router.put('/profile', protect, validate('userUpdate'), updateUserProfile);
 
-// Admin only routes
+
 router.get('/', protect, authorize('admin'), getAllUsers);
 router.delete('/:id', protect, authorize('admin'), deleteUser);
 
